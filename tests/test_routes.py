@@ -68,3 +68,10 @@ def test_get_receipt_points(client):
     assert response.status_code == 200
     assert 'points' in data
     assert data.get('points') == 28
+
+
+def test_invalid_get_receipt_points(client):
+    response = client.get(f'/receipts/123/points')
+    data = json.loads(response.data)
+
+    assert response.status_code == 404

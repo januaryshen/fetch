@@ -9,10 +9,10 @@ receiptToPoint = {}
 def process_receipt():
     try:
         data = request.json
-        receipt_id = str(uuid.uuid4())
+        id = str(uuid.uuid4())
         point = count_points(data)
-        receiptToPoint[receipt_id] = point
-        return jsonify({"id": receipt_id}), 200
+        receiptToPoint[id] = point
+        return jsonify({"id": id}), 200
     except Exception as e:
         print(f"Error processing receipt: {e}")
         return jsonify({"error": "Invalid receipt"}), 400

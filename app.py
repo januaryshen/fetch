@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import request, jsonify
+from flask import Flask, request, jsonify
 import uuid
 from utils import count_points
 

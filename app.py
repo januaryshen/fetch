@@ -16,7 +16,7 @@ def process_receipt():
         return jsonify({"id": receipt_id}), 200
     except Exception as e:
         print(f"Error processing receipt: {e}")
-        return jsonify({"error": "Internal Server Error"}), 500
+        return jsonify({"error": "Invalid receipt"}), 400
 
 @app.route('/receipts/<string:id>/points', methods=['GET'])
 def get_receipt_points(id):

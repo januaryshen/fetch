@@ -54,3 +54,7 @@ python -m venv venv
 source venv/bin/activate
 pytest tests
 ``````
+To leave the virtual environment:
+```
+deactivate
+```

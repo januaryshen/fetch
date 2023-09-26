@@ -1,9 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask
+from flask import request, jsonify
 import uuid
 from utils import count_points
 
 app = Flask(__name__)
-
 receiptToPoint = {}
 
 @app.route('/receipts/process', methods=['POST'])
@@ -26,8 +26,9 @@ def get_receipt_points(id):
         else:
             return jsonify({"error": "No receipt found for that id"}), 404
     except Exception as e:
-        print(f"Error getting receipt [pomts]: {e}")
+        print(f"Error getting receipt points: {e}")
         return jsonify({"error": "Internal Server Error"}), 500
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
